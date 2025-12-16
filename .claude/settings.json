@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./hack/spec_metadata.sh)",
+      "Bash(hack/spec_metadata.sh)",
+      "Bash(bash hack/spec_metadata.sh)"
+    ]
+  },
+  "enableAllProjectMcpServers": false,
+  "env": {
+    "MAX_THINKING_TOKENS": "75000",
+    "CLAUDE_BASH_MAINTAIN_WORKING_DIR": "1"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🤖 Claude Code approval needed!' | nc -w 1 127.0.0.1 4000 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "model": "opus"
+}
