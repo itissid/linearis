@@ -38,3 +38,4 @@ tmp/
 # Beans
 .beans/
 .beans.yml
+.mcp.json
